@@ -59,25 +59,26 @@ class _RoundEdgeRectangleButtonState extends State<RoundEdgeRectangleButton> {
                   boxShadow: [
                     new BoxShadow(
                       color: snapshot.data ? shadowTwo : shadowOne,
-                      offset: Offset(4.0, 4.0),
+                      offset: Offset(3.0, 3.0),
 //                          spreadRadius: -5.0,
-                      blurRadius: 5.0,
+                      blurRadius: 3.0,
                     ),
                     new BoxShadow(
                       color: snapshot.data ? shadowOne : shadowTwo,
-                      offset: Offset(-4.0, -4.0),
+                      offset: Offset(-2.0, -2.0),
 //                          spreadRadius: -5.0,
-                      blurRadius: 5.0,
+                      blurRadius: 3.0,
                     ),
                   ]),
               child: Center(
                 child: Container(
                   decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
                     shape: BoxShape.rectangle,
                     color: Color.fromRGBO(108,19,59, 1) ,
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(13.0),
+                    padding: const EdgeInsets.all(10.0),
                     child: widget.icon == null ? Text(widget.text, style: TextStyle(color: Colors.white70, fontSize: 16, fontWeight: FontWeight.bold),): Icon(
                       widget.icon,
                       size: 5.4 * Responsive.imageSizeMultiplier,
