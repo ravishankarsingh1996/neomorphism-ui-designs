@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:neomorphism_ui_designs/constants/colors.dart';
 import 'package:rxdart/rxdart.dart';
 
 import '../size_config.dart';
@@ -17,8 +18,6 @@ class RoundEdgeRectangleButton extends StatefulWidget {
 class _RoundEdgeRectangleButtonState extends State<RoundEdgeRectangleButton> {
 
   StreamController _pressedController =  BehaviorSubject<bool>();
-  Color shadowOne = Color.fromRGBO(68,10,36, 1);
-  Color shadowTwo = Color.fromRGBO(136,26,74, 1);
   bool isPressed = false;
 
   @override
@@ -81,7 +80,7 @@ class _RoundEdgeRectangleButtonState extends State<RoundEdgeRectangleButton> {
                     padding: const EdgeInsets.all(10.0),
                     child: widget.icon == null ? Text(widget.text, style: TextStyle(color: Colors.white70, fontSize: 16, fontWeight: FontWeight.bold),): Icon(
                       widget.icon,
-                      size: 5.4 * Responsive.imageSizeMultiplier,
+                      size: 20,
                       color: Colors.white38,
                     ),
                   ),

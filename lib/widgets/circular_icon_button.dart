@@ -71,7 +71,7 @@ class _CircularIconButtonState extends State<CircularIconButton> {
                     padding: const EdgeInsets.all(13.0),
                     child: Icon(
                       widget.icon,
-                      size: 5.4 * Responsive.imageSizeMultiplier,
+                      size: 20,
                       color: Colors.white38,
                     ),
                   ),

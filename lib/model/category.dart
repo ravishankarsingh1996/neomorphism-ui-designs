@@ -1,8 +1,10 @@
-class Category{
+class Product{
   final String imageUrl;
   final String category;
   final String productName;
+  final String price;
+  final bool isFav;
 
-  Category({this.imageUrl, this.category, this.productName});
+  Product({this.price, this.isFav,this.imageUrl, this.category, this.productName});
 
 }

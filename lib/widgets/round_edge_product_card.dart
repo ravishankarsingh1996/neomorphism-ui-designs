@@ -1,12 +1,13 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:neomorphism_ui_designs/constants/colors.dart';
 import 'package:neomorphism_ui_designs/model/category.dart';
 import 'package:neomorphism_ui_designs/size_config.dart';
 import 'package:rxdart/rxdart.dart';
 
 class RoundEdgeProductCard extends StatefulWidget {
-  final Category product;
+  final Product product;
 
   const RoundEdgeProductCard({Key key, this.product}) : super(key: key);
 
@@ -16,8 +17,6 @@ class RoundEdgeProductCard extends StatefulWidget {
 
 class _RoundEdgeProductCardState extends State<RoundEdgeProductCard> {
   StreamController _pressedController = BehaviorSubject<bool>();
-  Color shadowOne = Color.fromRGBO(68, 10, 36, 1);
-  Color shadowTwo = Color.fromRGBO(136, 26, 74, 1);
   bool isPressed = false;
 
   @override
@@ -83,8 +82,8 @@ class _RoundEdgeProductCardState extends State<RoundEdgeProductCard> {
                         Stack(
                           children: <Widget>[
                             Container(
-                                width: 150,
-                                height: 230,
+                                width: 220,
+                                height: 280,
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.only(
                                       topLeft: Radius.circular(10),
@@ -99,10 +98,11 @@ class _RoundEdgeProductCardState extends State<RoundEdgeProductCard> {
                               left: 5,
                               child: Container(
                                   decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
                                     boxShadow: [
                                       new BoxShadow(
                                         color: Colors.black26,
-                                        offset: Offset(3.0, 3.0),
+                                        offset: Offset(1.0, 1.0),
 //                          spreadRadius: -5.0,
                                         blurRadius: 5.0,
                                       ),
@@ -110,7 +110,7 @@ class _RoundEdgeProductCardState extends State<RoundEdgeProductCard> {
                                   ),
                                   child: Icon(
                                     Icons.favorite,
-                                    color: Colors.red,
+                                    color: widget.product.isFav ? Colors.red : Colors.white,
                                   )),
                             )
                           ],
