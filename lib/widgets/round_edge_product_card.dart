@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:neomorphism_ui_designs/constants/colors.dart';
 import 'package:neomorphism_ui_designs/model/category.dart';
+import 'package:neomorphism_ui_designs/pages/product_detail_page.dart';
 import 'package:neomorphism_ui_designs/size_config.dart';
 import 'package:rxdart/rxdart.dart';
 
@@ -28,7 +29,11 @@ class _RoundEdgeProductCardState extends State<RoundEdgeProductCard> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(
+          builder: (context) => ProductDetailPage(product: widget.product)
+        ));
+      },
       onPanEnd: (_) {
         isPressed = !isPressed;
         _pressedController.sink.add(isPressed);

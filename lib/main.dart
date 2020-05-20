@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:neomorphism_ui_designs/home_page.dart';
+import 'package:neomorphism_ui_designs/pages/home_page.dart';
 import 'package:neomorphism_ui_designs/size_config.dart';
 import 'package:neomorphism_ui_designs/widgets/circular_icon_button.dart';
 

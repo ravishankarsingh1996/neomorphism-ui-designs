@@ -7,8 +7,9 @@ import 'package:rxdart/rxdart.dart';
 
 class RoundEdgeCollectionCard extends StatefulWidget {
   final Product product;
+  final isDetail;
 
-  const RoundEdgeCollectionCard({Key key, this.product}) : super(key: key);
+  const RoundEdgeCollectionCard({Key key, this.product, this.isDetail = false}) : super(key: key);
 
   @override
   _RoundEdgeCollectionCardState createState() =>
@@ -108,27 +109,27 @@ class _RoundEdgeCollectionCardState extends State<RoundEdgeCollectionCard> {
                                 children: <Widget>[
                                   Icon(
                                     Icons.star,
-                                    color: shadowOne,
+                                    color: iconColor,
                                     size: 15,
                                   ),
                                   Icon(
                                     Icons.star,
-                                    color: shadowOne,
+                                    color: iconColor,
                                     size: 15,
                                   ),
                                   Icon(
                                     Icons.star,
-                                    color: shadowOne,
+                                    color: iconColor,
                                     size: 15,
                                   ),
                                   Icon(
                                     Icons.star,
-                                    color: shadowOne,
+                                    color: iconColor,
                                     size: 15,
                                   ),
                                   Icon(
                                     Icons.star_border,
-                                    color: shadowOne,
+                                    color: iconColor,
                                     size: 15,
                                   ),
                                 ],
@@ -187,8 +188,8 @@ class _RoundEdgeCollectionCardState extends State<RoundEdgeCollectionCard> {
                                 ),
                               ]),
                           child: Icon(
-                            Icons.arrow_forward,
-                            color: shadowOne,
+                            widget.isDetail ? Icons.add_shopping_cart :Icons.arrow_forward,
+                            color: iconColor,
                           ),
                         ),
                       )
