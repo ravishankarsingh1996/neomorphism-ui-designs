@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:neomorphism_ui_designs/constants/colors.dart';
 import 'package:rxdart/rxdart.dart';
 
 import '../size_config.dart';
@@ -16,8 +17,6 @@ class CircularIconButton extends StatefulWidget {
 
 class _CircularIconButtonState extends State<CircularIconButton> {
   StreamController _pressedController = BehaviorSubject<bool>();
-  Color shadowOne = Color.fromRGBO(68, 10, 36, 1);
-  Color shadowTwo = Color.fromRGBO(136, 26, 74, 1);
   bool isPressed = false;
 
   @override
@@ -45,7 +44,7 @@ class _CircularIconButtonState extends State<CircularIconButton> {
             return Container(
               decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Color.fromRGBO(108, 19, 59, 1),
+                  color: appColor,
                   boxShadow: [
                     new BoxShadow(
                       color: snapshot.data ? shadowTwo : shadowOne,
@@ -65,14 +64,14 @@ class _CircularIconButtonState extends State<CircularIconButton> {
                 child: Container(
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Color.fromRGBO(108, 19, 59, 1),
+                    color: appColor,
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(13.0),
                     child: Icon(
                       widget.icon,
                       size: 20,
-                      color: Colors.white38,
+                      color: iconColor,
                     ),
                   ),
                 ),

@@ -50,7 +50,7 @@ class _RoundEdgeProductCardState extends State<RoundEdgeProductCard> {
               margin: EdgeInsets.all(10),
               decoration: BoxDecoration(
                   shape: BoxShape.rectangle,
-                  color: Color.fromRGBO(108, 19, 59, 1),
+                  color: appColor,
                   borderRadius: BorderRadius.circular(10),
                   boxShadow: [
                     new BoxShadow(
@@ -71,7 +71,7 @@ class _RoundEdgeProductCardState extends State<RoundEdgeProductCard> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     shape: BoxShape.rectangle,
-                    color: Color.fromRGBO(108, 19, 59, 1),
+                    color: appColor,
                   ),
                   child: Container(
 //                    padding: const EdgeInsets.all(10.0),
@@ -121,7 +121,7 @@ class _RoundEdgeProductCardState extends State<RoundEdgeProductCard> {
                           child: Text(
                             '${widget.product.category}',
                             style:
-                                TextStyle(color: Colors.white60, fontSize: 14),
+                                TextStyle(color: textLight, fontSize: 14),
                           ),
                         ),
                         Padding(
@@ -130,7 +130,7 @@ class _RoundEdgeProductCardState extends State<RoundEdgeProductCard> {
                           child: Text(
                             '${widget.product.productName}',
                             style: TextStyle(
-                                color: Colors.white70,
+                                color: textBold,
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold),
                           ),

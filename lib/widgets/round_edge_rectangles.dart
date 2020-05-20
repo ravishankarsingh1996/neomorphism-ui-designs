@@ -53,7 +53,7 @@ class _RoundEdgeRectangleButtonState extends State<RoundEdgeRectangleButton> {
               margin: EdgeInsets.all(10),
               decoration: BoxDecoration(
                   shape: BoxShape.rectangle,
-                  color: Color.fromRGBO(108,19,59, 1),
+                  color: appColor,
                   borderRadius: BorderRadius.circular(10),
                   boxShadow: [
                     new BoxShadow(
@@ -74,14 +74,14 @@ class _RoundEdgeRectangleButtonState extends State<RoundEdgeRectangleButton> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     shape: BoxShape.rectangle,
-                    color: Color.fromRGBO(108,19,59, 1) ,
+                    color: appColor ,
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
-                    child: widget.icon == null ? Text(widget.text, style: TextStyle(color: Colors.white70, fontSize: 16, fontWeight: FontWeight.bold),): Icon(
+                    child: widget.icon == null ? Text(widget.text, style: TextStyle(color: textBold, fontSize: 16, fontWeight: FontWeight.bold),): Icon(
                       widget.icon,
                       size: 20,
-                      color: Colors.white38,
+                      color: iconColor,
                     ),
                   ),
                 ),

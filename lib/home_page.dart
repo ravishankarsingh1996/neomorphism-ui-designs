@@ -177,7 +177,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               child: Text(
                                 'MOON Lamps',
                                 style: TextStyle(
-                                    color: Colors.white70,
+                                    color: textBold,
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold),
                               ),
@@ -187,7 +187,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               left: 0,
                               right: 0,
                               child: Container(
-                                height: 380,
+                                height: 370,
                                 width: double.infinity,
                                 child: ListView.builder(
                                   itemBuilder: (context, index) {
@@ -212,7 +212,7 @@ class _MyHomePageState extends State<MyHomePage> {
                            child: Text(
                              'Collections',
                              style:
-                             TextStyle(color: Colors.white70, fontSize: 20, fontWeight: FontWeight.bold),
+                             TextStyle(color: textBold, fontSize: 20, fontWeight: FontWeight.bold),
                            ),
                          ),
                          Padding(
@@ -221,7 +221,7 @@ class _MyHomePageState extends State<MyHomePage> {
                            child: Text(
                              'View All',
                              style:
-                             TextStyle(color: Colors.white60, fontSize: 16, fontWeight: FontWeight.bold),
+                             TextStyle(color: textLight, fontSize: 16, fontWeight: FontWeight.bold),
                            ),
                          ),
                        ],
