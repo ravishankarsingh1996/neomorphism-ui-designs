@@ -7,8 +7,9 @@ import 'package:rxdart/rxdart.dart';
 
 class RoundEdgeCollectionCard extends StatefulWidget {
   final Product product;
+  final isDetail;
 
-  const RoundEdgeCollectionCard({Key key, this.product}) : super(key: key);
+  const RoundEdgeCollectionCard({Key key, this.product, this.isDetail = false}) : super(key: key);
 
   @override
   _RoundEdgeCollectionCardState createState() =>
@@ -37,7 +38,7 @@ class _RoundEdgeCollectionCardState extends State<RoundEdgeCollectionCard> {
             margin: EdgeInsets.all(10),
             decoration: BoxDecoration(
                 shape: BoxShape.rectangle,
-                color: Color.fromRGBO(108, 19, 59, 1),
+                color: appColor,
                 borderRadius: BorderRadius.circular(10),
                 boxShadow: [
                   new BoxShadow(
@@ -58,7 +59,7 @@ class _RoundEdgeCollectionCardState extends State<RoundEdgeCollectionCard> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   shape: BoxShape.rectangle,
-                  color: Color.fromRGBO(108, 19, 59, 1),
+                  color: appColor,
                 ),
                 child: Container(
                   padding: const EdgeInsets.all(10.0),
@@ -87,7 +88,7 @@ class _RoundEdgeCollectionCardState extends State<RoundEdgeCollectionCard> {
                               child: Text(
                                 '${widget.product.category}',
                                 style: TextStyle(
-                                    color: Colors.white60, fontSize: 14),
+                                    color: textLight, fontSize: 14),
                               ),
                             ),
                             Padding(
@@ -96,7 +97,7 @@ class _RoundEdgeCollectionCardState extends State<RoundEdgeCollectionCard> {
                               child: Text(
                                 '${widget.product.productName}',
                                 style: TextStyle(
-                                    color: Colors.white70,
+                                    color: textBold,
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold),
                               ),
@@ -108,27 +109,27 @@ class _RoundEdgeCollectionCardState extends State<RoundEdgeCollectionCard> {
                                 children: <Widget>[
                                   Icon(
                                     Icons.star,
-                                    color: shadowOne,
+                                    color: iconColor,
                                     size: 15,
                                   ),
                                   Icon(
                                     Icons.star,
-                                    color: shadowOne,
+                                    color: iconColor,
                                     size: 15,
                                   ),
                                   Icon(
                                     Icons.star,
-                                    color: shadowOne,
+                                    color: iconColor,
                                     size: 15,
                                   ),
                                   Icon(
                                     Icons.star,
-                                    color: shadowOne,
+                                    color: iconColor,
                                     size: 15,
                                   ),
                                   Icon(
                                     Icons.star_border,
-                                    color: shadowOne,
+                                    color: iconColor,
                                     size: 15,
                                   ),
                                 ],
@@ -140,7 +141,7 @@ class _RoundEdgeCollectionCardState extends State<RoundEdgeCollectionCard> {
                               child: Text(
                                 '${widget.product.price}',
                                 style: TextStyle(
-                                    color: Colors.white70,
+                                    color: textBold,
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold),
                               ),
@@ -168,7 +169,7 @@ class _RoundEdgeCollectionCardState extends State<RoundEdgeCollectionCard> {
                           margin: EdgeInsets.all(10),
                           decoration: BoxDecoration(
                               shape: BoxShape.rectangle,
-                              color: Color.fromRGBO(108, 19, 59, 1),
+                              color: appColor,
                               borderRadius: BorderRadius.only(
                                   topLeft: Radius.circular(10),
                                   bottomRight: Radius.circular(10)),
@@ -187,8 +188,8 @@ class _RoundEdgeCollectionCardState extends State<RoundEdgeCollectionCard> {
                                 ),
                               ]),
                           child: Icon(
-                            Icons.arrow_forward,
-                            color: shadowOne,
+                            widget.isDetail ? Icons.add_shopping_cart :Icons.arrow_forward,
+                            color: iconColor,
                           ),
                         ),
                       )
