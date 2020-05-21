@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:neomorphism_ui_designs/constants/colors.dart';
-import 'package:neomorphism_ui_designs/model/category.dart';
+import 'package:neomorphism_ui_designs/model/product.dart';
 import 'package:rxdart/rxdart.dart';
 
 class RoundEdgeCollectionCard extends StatefulWidget {
