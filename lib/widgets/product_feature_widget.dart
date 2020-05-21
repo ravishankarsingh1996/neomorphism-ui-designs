@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:neomorphism_ui_designs/constants/colors.dart';
-import 'package:neomorphism_ui_designs/model/category.dart';
+import 'package:neomorphism_ui_designs/model/product.dart';
+import 'package:neomorphism_ui_designs/model/product_features.dart';
 
-class ProductFeaturePage extends StatelessWidget {
-  final Product product;
+class ProductFeatureWidget extends StatelessWidget {
+  final ProductFeatures productFeatures;
 
-  const ProductFeaturePage({Key key, this.product}) : super(key: key);
+  const ProductFeatureWidget({Key key, this.productFeatures}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -68,7 +69,7 @@ class ProductFeaturePage extends StatelessWidget {
                         ),
                       ]),
                   child: Icon(
-                    Icons.arrow_forward,
+                    productFeatures.icon,
                     color: iconColor,
                   ),
                 ),
@@ -79,7 +80,7 @@ class ProductFeaturePage extends StatelessWidget {
                   padding:
                   const EdgeInsets.only(top: 5, left: 5, right: 5),
                   child: Text(
-                    '${'Hello'}',
+                    '${productFeatures.title}',
                     style:
                     TextStyle(color: textLight, fontSize: 14),
                   ),
@@ -88,7 +89,7 @@ class ProductFeaturePage extends StatelessWidget {
                   padding:
                   const EdgeInsets.only(top: 5, left: 5, right: 5),
                   child: Text(
-                    '${'Hello'}',
+                    '${productFeatures.value}',
                     style: TextStyle(
                         color: textBold,
                         fontSize: 18,

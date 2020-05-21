@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:neomorphism_ui_designs/utils/app_utils.dart';
 import 'package:neomorphism_ui_designs/widgets/circular_icon_button.dart';
 import 'package:neomorphism_ui_designs/widgets/round_edge_collection_card.dart';
 import 'package:neomorphism_ui_designs/widgets/round_edge_product_card.dart';
 import 'package:neomorphism_ui_designs/widgets/round_edge_rectangles.dart';
 
 import '../constants/colors.dart';
-import '../model/category.dart';
+import '../model/product.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key}) : super(key: key);
@@ -16,6 +17,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   List categoryList = [
+    'All',
     'Bed',
     'Sofa',
     'Lamps',
@@ -35,76 +37,13 @@ class _MyHomePageState extends State<MyHomePage> {
     'Accent tables',
     'End tables',
   ];
-  List<Product> product = [
-    Product(
-      posterImageUrl: 'https://images.unsplash.com/photo-1576723664290-a8f52b7ee8a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
-        imageUrl:
-            'https://image.freepik.com/free-photo/hotel-interior_144627-27370.jpg',
-        category: 'Standing',
-        productName: 'Table Lamp',
-        isFav: true,
-        price: '\$199'),
-    Product(
-        posterImageUrl: 'https://images.unsplash.com/photo-1547398890-5be13019f343?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2380&q=80',
-        imageUrl:
-            'https://image.freepik.com/free-vector/lamp-with-grunge-texture_23-2147499247.jpg',
-        category: 'Hanging',
-        productName: 'Hanging Lamp',
-        isFav: false,
-        price: '\$99'),
-    Product(
-      posterImageUrl: 'https://images.unsplash.com/photo-1573813971495-e4b5e4a548fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80',
-        imageUrl:
-            'https://image.freepik.com/free-vector/vintage-realistic-wall-electric-lamp_99660-147.jpg',
-        category: 'Hanging',
-        productName: 'Wall Lamp',
-        isFav: true,
-        price: '\$299'),
-    Product(
-      posterImageUrl: 'https://images.unsplash.com/photo-1505409628601-edc9af17fda6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2784&q=80',
-        imageUrl:
-            'https://images.unsplash.com/photo-1526308182272-d2fe5e5947d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
-        category: 'Table',
-        productName: 'Dinning Table',
-        isFav: true,
-        price: '\$1099'),
-    Product(
-      posterImageUrl: 'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
-        imageUrl:
-            'https://images.unsplash.com/photo-1584198541667-f790d4f62742?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
-        category: 'Sofa',
-        productName: 'Sofa',
-        isFav: true,
-        price: '\$499'),
-    Product(
-      posterImageUrl: 'https://images.unsplash.com/photo-1551298370-9d3d53740c72?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80',
-        imageUrl:
-            'https://images.unsplash.com/photo-1571283600721-e0e5d851fd17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
-        category: 'Chair',
-        productName: 'Plastic Light Chair',
-        isFav: true,
-        price: '\$79'),
-    Product(
-      posterImageUrl: 'https://images.unsplash.com/photo-1536639240649-1f0979e7993d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
-        imageUrl:
-            'https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
-        category: 'Stool',
-        productName: 'Wooden Stool',
-        isFav: false,
-        price: '\$69'),
-    Product(
-      posterImageUrl: 'https://images.unsplash.com/photo-1529338296731-c4280a44fc48?ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80',
-        imageUrl:
-            'https://images.unsplash.com/photo-1449247709967-d4461a6a6103?ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80',
-        category: 'Table',
-        productName: 'Work Table',
-        isFav: true,
-        price: '\$159'),
-  ];
+  List<Product> product = [];
 
   @override
   void initState() {
     super.initState();
+    ApUtils utils = ApUtils();
+    product = utils.getProductsList();
   }
 
   @override
@@ -157,11 +96,6 @@ class _MyHomePageState extends State<MyHomePage> {
                                 child: ListView.builder(
                                   itemCount: categoryList.length,
                                   itemBuilder: (context, position) {
-                                    if (position == 0) {
-                                      return RoundEdgeRectangleButton(
-                                        icon: Icons.settings,
-                                      );
-                                    }
                                     return RoundEdgeRectangleButton(
                                       text: categoryList[position],
                                     );
